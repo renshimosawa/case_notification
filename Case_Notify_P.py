@@ -4,9 +4,6 @@ import requests
 import datetime
 import setting
 import schedule
-import os
-from os.path import join, dirname
-from dotenv import load_dotenv
 
 
 Target_URL = 'https://covid19.codeforaomori.org/'
