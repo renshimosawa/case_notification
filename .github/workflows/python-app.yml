@@ -2,9 +2,9 @@ name: Case Notification
 
 on:
   push:
-    branches: [ main ]
+    branch: [main]
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '45 7 * * *'
 
 jobs:
   build:
@@ -31,7 +31,10 @@ jobs:
     - name: Create dot env file
       run: |
         touch .env
-        echo "LINE_TOKEN_MY=${{ 'SDayipcaDmusBGQLTm9xepD0VVU14vyNLjGnGrmFLW5' }}" >> .env
+        echo "LINE_TOKEN_F=${{ 'kTwWrZxlnLrXfO4txAkNTHXAwFYhjMoXcDsTPLwS8ZK' }}" >> .env
+        echo "LINE_TOKEN_Y=${{ 'puZMRpQJxUUw97UxwNTe0A1AWkzJDCjNDsvVPxMPvBw' }}" >> .env
+        echo "LINE_TOKEN_N=${{ 'Aj0ELeypFsembv1AqCfcGoZib1TNt53UmbeYSBTUOXi' }}" >> .env
+        echo "LINE_TOKEN_GM=${{ 'SDayipcaDmusBGQLTm9xepD0VVU14vyNLjGnGrmFLW5' }}" >> .env
 
     - name: Notify_P.py
       run: |
