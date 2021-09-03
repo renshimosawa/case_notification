@@ -19,7 +19,7 @@ message = f'{now}の青森県の新規感染者数は\n{number}人\n({date})'
 print(f'{now}の青森県の新規感染者数は{number}人\n({date})')
 
 TOKEN = setting.AP_MY
-
+print(TOKEN)
 def main():
     send_line_notify(
       message
