@@ -1,17 +1,15 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
-
 name: Python application
 
 on:
   push:
     branches: [ main ]
+    schedule:
+    - cron: '0 8 * * *'
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+timeout-minutes: 1
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
@@ -23,12 +21,23 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
+        pip install bs4
+        pip install requests
+        pip install datetime
+        pip install schedule
+        pip install python-dotenv
+    - name: Create dot env file
+        run: |
+          touch .env
+          echo "LINE_TOKEN_F=${{ 'UuEhXjvcWwSCMw2krFdgtnAeDJ1phXP5XgAZKHo4XvT' }}" >> .env
+    - name: Notify.py
       run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
+        python Case_Notify_P.py
+    - name: Commit and Push
       run: |
-        pytest
+        git config user.name "renshimosawa"
+        git config user.email "polaris2760@gmail.com"
+        git add .
+        git commit -m "Commit Message"
+        git pull
+        git push origin master

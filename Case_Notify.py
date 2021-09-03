@@ -4,6 +4,7 @@ import requests
 import datetime
 import setting
 import schedule
+import csv
 
 
 Target_URL = 'https://covid19.codeforaomori.org/'
@@ -14,17 +15,30 @@ now = datetime.datetime.now().strftime('%Y年%m月%d日')
 soup = bs4.BeautifulSoup(resp.text, "html.parser")
 articles=[] 
 
-table = soup.find_all(class_="v-data-table__wrapper")
-for td in table:
-  date=td.find('td', class_='text-start').text.strip()
-  area=td.find('td', class_="text-start").text.strip()
-  article={
-    'date':date,
-    'area':area,
-  }
-  articles.append(article)
+table = soup.find_all(class_="v-data-table__wrapper")[4]
+
+r = [] 
+thead = table.find('thead')
+ths = thead.tr.find_all('th')
+for th in ths:
+  r.append(th.text)
+
+articles.append(r)
+
+tbody = table.find("tbody")
+trs = tbody.find_all('tr')
+for tr in trs:
+  r = []
+  for td in tr.find_all('td'):
+    r.append(td.text)
+  articles.append(r)
+
+print(articles[0,3])
+
+# for r in articles:
+#   print(','.join(r))
+# tr = body.find("tr")
 # message = f'今日の{entries[4].find(class_="mode-label").text}の価格は{entries[4].find(class_="price").text}円です'
-print(area)
 # TOKEN = setting.AP_F
 
 # def main():
