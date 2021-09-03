@@ -30,7 +30,7 @@ jobs:
       run: |
         touch .env
         echo "LINE_TOKEN_F=${{ 'UuEhXjvcWwSCMw2krFdgtnAeDJ1phXP5XgAZKHo4XvT' }}" >> .env
-    - name: Notify.py
+    - name: Notify
       run: |
         python Case_Notify_P.py
     - name: Commit and Push
