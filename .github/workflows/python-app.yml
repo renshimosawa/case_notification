@@ -12,7 +12,7 @@ jobs:
     timeout-minutes: 1
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.9
+    - name: Set up Python 3.9.6
       uses: actions/setup-python@v2
       with:
         python-version: 3.9.6
@@ -32,6 +32,6 @@ jobs:
       run: |
         touch .env
         echo "LINE_TOKEN_MY=${{ 'UuEhXjvcWwSCMw2krFdgtnAeDJ1phXP5XgAZKHo4XvT' }}" >> .env
-    - name: Case_Notify_P.py
+    - name: Notify_P.py
       run: |
-        python Case_Notify_P.py &
+        python Notify_P.py
