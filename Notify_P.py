@@ -1,5 +1,5 @@
-import bs4
 import requests
+import bs4
 import datetime
 import os
 from os.path import join, dirname
