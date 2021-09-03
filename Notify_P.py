@@ -1,7 +1,9 @@
 import bs4
+import time
 import requests
 import datetime
 import setting
+import schedule
 
 
 Target_URL = 'https://covid19.codeforaomori.org/'
@@ -35,3 +37,9 @@ def send_line_notify(notification_message):
 
 if __name__ == "__main__":
     main()
+
+schedule.every().day.at("08:00").do(main, send_line_notify)
+
+while True:
+    schedule.run_pending()
+    time.sleep(3)
