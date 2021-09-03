@@ -1,7 +1,14 @@
 import bs4
 import requests
 import datetime
-import setting
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+AP_MY = os.environ.get("LINE_TOKEN_MY")
 
 
 Target_URL = 'https://covid19.codeforaomori.org/'
@@ -14,9 +21,10 @@ entries = soup.find_all(class_="DataView-Header")
 number = entries[0].find(class_="DataView-DataInfo-summary").text.replace('人','').replace(' ','').replace('\n', '')
 date = entries[0].find(class_="DataView-DataInfo-date").text
 message = f'{now}の青森県の新規感染者数は\n{number}人\n({date})'
-print(f'{now}の青森県の新規感染者数は{number}人\n({date})')
+# print(f'{now}の青森県の新規感染者数は{number}人\n({date})')
 
-TOKEN = setting.AP_MY
+TOKEN = AP_MY
+
 def main():
     send_line_notify(
       message
