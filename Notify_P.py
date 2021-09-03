@@ -1,9 +1,7 @@
 import bs4
-import time
 import requests
 import datetime
 import setting
-import schedule
 
 
 Target_URL = 'https://covid19.codeforaomori.org/'
@@ -19,12 +17,10 @@ message = f'{now}の青森県の新規感染者数は\n{number}人\n({date})'
 print(f'{now}の青森県の新規感染者数は{number}人\n({date})')
 
 TOKEN = setting.AP_MY
-print(TOKEN)
 def main():
     send_line_notify(
       message
     )
-    schedule.every().day.at("17:00").do(main, send_line_notify)
 
 def send_line_notify(notification_message):
     """
@@ -38,8 +34,3 @@ def send_line_notify(notification_message):
 
 if __name__ == "__main__":
     main()
-
-
-while True:
-    schedule.run_pending()
-    time.sleep(3)
