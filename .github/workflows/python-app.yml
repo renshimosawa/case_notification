@@ -24,9 +24,9 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install bs4
         pip install requests
+        pip install python-dotenv
         pip install datetime
         pip install schedule
-        pip install python-dotenv
 
     - name: Create dot env file
       run: |
