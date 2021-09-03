@@ -20,7 +20,7 @@ message = f'{now}の青森県の新規感染者数は\n{number}人\n({date})'
 TOKEN_F = setting.AP_F
 TOKEN_Y = setting.AP_Y
 TOKEN_N = setting.AP_N
-TOKEN_G = setting.AP_GM
+TOKEN_GM = setting.AP_GM
 
 def main():
     send_line_notify_F(
@@ -50,7 +50,7 @@ def send_line_notify_Y(notification_message):
     """
     LINEに通知する
     """
-    line_notify_token = TOKEN_F
+    line_notify_token = TOKEN_Y
     line_notify_api = 'https://notify-api.line.me/api/notify'
     headers = {'Authorization': f'Bearer {line_notify_token}'}
     data = {'message': f'\n{notification_message}'}
@@ -60,7 +60,7 @@ def send_line_notify_N(notification_message):
     """
     LINEに通知する
     """
-    line_notify_token = TOKEN_F
+    line_notify_token = TOKEN_N
     line_notify_api = 'https://notify-api.line.me/api/notify'
     headers = {'Authorization': f'Bearer {line_notify_token}'}
     data = {'message': f'\n{notification_message}'}
@@ -70,7 +70,7 @@ def send_line_notify_GM(notification_message):
     """
     LINEに通知する
     """
-    line_notify_token = TOKEN_F
+    line_notify_token = TOKEN_GM
     line_notify_api = 'https://notify-api.line.me/api/notify'
     headers = {'Authorization': f'Bearer {line_notify_token}'}
     data = {'message': f'\n{notification_message}'}
