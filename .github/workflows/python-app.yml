@@ -24,14 +24,14 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install bs4
         pip install requests
-        pip install python-dotenv
         pip install datetime
         pip install schedule
+        pip install python-dotenv
 
     - name: Create dot env file
       run: |
         touch .env
-        echo "LINE_TOKEN_MY=${{ 'UuEhXjvcWwSCMw2krFdgtnAeDJ1phXP5XgAZKHo4XvT' }}" >> .env
+        echo "LINE_TOKEN_MY=${{ 'SDayipcaDmusBGQLTm9xepD0VVU14vyNLjGnGrmFLW5' }}" >> .env
     - name: Notify_P.py
       run: |
         python Notify_P.py

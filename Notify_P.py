@@ -24,6 +24,7 @@ def main():
     send_line_notify(
       message
     )
+    schedule.every().day.at("17:00").do(main, send_line_notify)
 
 def send_line_notify(notification_message):
     """
@@ -38,7 +39,6 @@ def send_line_notify(notification_message):
 if __name__ == "__main__":
     main()
 
-schedule.every().day.at("17:00").do(main, send_line_notify)
 
 while True:
     schedule.run_pending()
