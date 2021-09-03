@@ -14,8 +14,8 @@ soup = bs4.BeautifulSoup(resp.text, "html.parser")
 entries = soup.find_all(class_="DataView-Header")
 number = entries[0].find(class_="DataView-DataInfo-summary").text.replace('人','').replace(' ','').replace('\n', '')
 date = entries[0].find(class_="DataView-DataInfo-date").text
-message = f'{now}の新規感染者数は{number}人\n({date})'
-print(f'{now}の新規感染者数は{number}人\n({date})')
+message = f'{now}の青森県の新規感染者数は{number}人\n({date})'
+print(f'{now}の青森県の新規感染者数は{number}人\n({date})')
 TOKEN = setting.AP_MY
 
 def main():

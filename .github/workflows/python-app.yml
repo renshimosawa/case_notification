@@ -1,10 +1,10 @@
-name: Python application
+name: Case Notification
 
 on:
   push:
     branches: [ main ]
-    schedule:
-    - cron: '0 8 * * *'
+  schedule:
+  - cron: '0 8 * * *'
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+        python-version: 3.9.6
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -30,7 +30,7 @@ jobs:
       run: |
         touch .env
         echo "LINE_TOKEN_MINE=${{'UuEhXjvcWwSCMw2krFdgtnAeDJ1phXP5XgAZKHo4XvT'}}" >> .env
-    - name: Notify
+    - name: Case_Notify_P.py
       run: |
         python Case_Notify_P.py
     - name: Commit and Push
