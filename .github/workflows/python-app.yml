@@ -34,4 +34,4 @@ jobs:
         echo "LINE_TOKEN_MY=${{ 'UuEhXjvcWwSCMw2krFdgtnAeDJ1phXP5XgAZKHo4XvT' }}" >> .env
     - name: Case_Notify_P.py
       run: |
-        python Case_Notify_P.py &
+        python Case_Notify_P.py
