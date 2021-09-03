@@ -16,20 +16,61 @@ entries = soup.find_all(class_="DataView-Header")
 number = entries[0].find(class_="DataView-DataInfo-summary").text.replace('人','').replace(' ','').replace('\n', '')
 date = entries[0].find(class_="DataView-DataInfo-date").text
 message = f'{now}の青森県の新規感染者数は\n{number}人\n({date})'
-# print(f'{now}の青森県の新規感染者数は{number}人\n({date})')
 
-TOKEN = setting.AP_MY
+TOKEN_F = setting.AP_F
+TOKEN_Y = setting.AP_Y
+TOKEN_N = setting.AP_N
+TOKEN_G = setting.AP_GM
 
 def main():
-    send_line_notify(
+    send_line_notify_F(
+      message
+    )
+    send_line_notify_Y(
+      message
+    )
+    send_line_notify_N(
+      message
+    )
+    send_line_notify_GM(
       message
     )
 
-def send_line_notify(notification_message):
+def send_line_notify_F(notification_message):
     """
     LINEに通知する
     """
-    line_notify_token = TOKEN
+    line_notify_token = TOKEN_F
+    line_notify_api = 'https://notify-api.line.me/api/notify'
+    headers = {'Authorization': f'Bearer {line_notify_token}'}
+    data = {'message': f'\n{notification_message}'}
+    requests.post(line_notify_api, headers = headers, data = data)
+
+def send_line_notify_Y(notification_message):
+    """
+    LINEに通知する
+    """
+    line_notify_token = TOKEN_F
+    line_notify_api = 'https://notify-api.line.me/api/notify'
+    headers = {'Authorization': f'Bearer {line_notify_token}'}
+    data = {'message': f'\n{notification_message}'}
+    requests.post(line_notify_api, headers = headers, data = data)
+
+def send_line_notify_N(notification_message):
+    """
+    LINEに通知する
+    """
+    line_notify_token = TOKEN_F
+    line_notify_api = 'https://notify-api.line.me/api/notify'
+    headers = {'Authorization': f'Bearer {line_notify_token}'}
+    data = {'message': f'\n{notification_message}'}
+    requests.post(line_notify_api, headers = headers, data = data)
+
+def send_line_notify_GM(notification_message):
+    """
+    LINEに通知する
+    """
+    line_notify_token = TOKEN_F
     line_notify_api = 'https://notify-api.line.me/api/notify'
     headers = {'Authorization': f'Bearer {line_notify_token}'}
     data = {'message': f'\n{notification_message}'}
@@ -38,7 +79,7 @@ def send_line_notify(notification_message):
 if __name__ == "__main__":
     main()
 
-schedule.every().day.at("08:00").do(main, send_line_notify)
+schedule.every().day.at("08:00").do(main, send_line_notify_F)
 
 while True:
     schedule.run_pending()
