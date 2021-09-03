@@ -26,6 +26,7 @@ jobs:
         pip install requests
         pip install datetime
         pip install schedule
+        pip install python-dotenv -v 0.19.0
 
     - name: Create dot env file
       run: |
