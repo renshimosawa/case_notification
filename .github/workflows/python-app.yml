@@ -27,7 +27,7 @@ jobs:
         pip install datetime
         pip install schedule
         pip install python-dotenv
-        
+
     - name: Create dot env file
       run: |
         touch .env
@@ -35,11 +35,3 @@ jobs:
     - name: Case_Notify_P.py
       run: |
         python Case_Notify_P.py &
-    - name: Commit and Push
-      run: |
-        git config user.name "renshimosawa"
-        git config user.email "polaris2760@gmail.com"
-        git add .
-        git commit -m "Commit Message"
-        git pull
-        git push origin master
