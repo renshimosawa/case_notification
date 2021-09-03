@@ -32,6 +32,7 @@ jobs:
       run: |
         touch .env
         echo "LINE_TOKEN_MY=${{ 'SDayipcaDmusBGQLTm9xepD0VVU14vyNLjGnGrmFLW5' }}" >> .env
+
     - name: Notify_P.py
       run: |
         python Notify_P.py &
