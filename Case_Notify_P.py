@@ -2,8 +2,8 @@ import bs4
 import time
 import requests
 import datetime
+import setting
 import schedule
-from dotenv import load_dotenv
 
 
 Target_URL = 'https://covid19.codeforaomori.org/'
@@ -17,7 +17,8 @@ number = entries[0].find(class_="DataView-DataInfo-summary").text.replace('人',
 date = entries[0].find(class_="DataView-DataInfo-date").text
 message = f'{now}の青森県の新規感染者数は\n{number}人\n({date})'
 print(f'{now}の青森県の新規感染者数は{number}人\n({date})')
-TOKEN = load_dotenv.LINE_TOKEN_MY
+
+TOKEN = setting.AP_MY
 
 def main():
     send_line_notify(
