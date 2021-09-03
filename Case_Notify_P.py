@@ -5,6 +5,7 @@ import datetime
 import setting
 import schedule
 
+
 Target_URL = 'https://covid19.codeforaomori.org/'
 headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36"}
 resp = requests.get(Target_URL, headers=headers)
