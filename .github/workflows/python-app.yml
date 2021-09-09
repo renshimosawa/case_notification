@@ -2,7 +2,7 @@ name: Case Notification
 
 on:
   schedule:
-    - cron: '45 7 * * *'
+    - cron: '0 8 * * *'
 
 jobs:
   build:
