@@ -18,21 +18,9 @@ date = entries[0].find(class_="DataView-DataInfo-date").text
 message = f'{now}の青森県の新規感染者数は\n{number}人\n({date})'
 
 TOKEN_F = setting.AP_F
-TOKEN_Y = setting.AP_Y
-TOKEN_N = setting.AP_N
-TOKEN_GM = setting.AP_GM
 
 def main():
     send_line_notify_F(
-      message
-    )
-    send_line_notify_Y(
-      message
-    )
-    send_line_notify_N(
-      message
-    )
-    send_line_notify_GM(
       message
     )
 
@@ -46,35 +34,6 @@ def send_line_notify_F(notification_message):
     data = {'message': f'\n{notification_message}'}
     requests.post(line_notify_api, headers = headers, data = data)
 
-def send_line_notify_Y(notification_message):
-    """
-    LINEに通知する
-    """
-    line_notify_token = TOKEN_Y
-    line_notify_api = 'https://notify-api.line.me/api/notify'
-    headers = {'Authorization': f'Bearer {line_notify_token}'}
-    data = {'message': f'\n{notification_message}'}
-    requests.post(line_notify_api, headers = headers, data = data)
-
-def send_line_notify_N(notification_message):
-    """
-    LINEに通知する
-    """
-    line_notify_token = TOKEN_N
-    line_notify_api = 'https://notify-api.line.me/api/notify'
-    headers = {'Authorization': f'Bearer {line_notify_token}'}
-    data = {'message': f'\n{notification_message}'}
-    requests.post(line_notify_api, headers = headers, data = data)
-
-def send_line_notify_GM(notification_message):
-    """
-    LINEに通知する
-    """
-    line_notify_token = TOKEN_GM
-    line_notify_api = 'https://notify-api.line.me/api/notify'
-    headers = {'Authorization': f'Bearer {line_notify_token}'}
-    data = {'message': f'\n{notification_message}'}
-    requests.post(line_notify_api, headers = headers, data = data)
 
 if __name__ == "__main__":
     main()

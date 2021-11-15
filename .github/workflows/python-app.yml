@@ -36,4 +36,7 @@ jobs:
 
     - name: Notify_P.py
       run: |
-        python Notify_P.py &
+        python Notify_F.py &
+        python Notify_N.py &
+        python Notify_Y.py &
+        python Notify_GM.py &
