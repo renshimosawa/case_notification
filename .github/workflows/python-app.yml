@@ -34,7 +34,7 @@ jobs:
         echo "LINE_TOKEN_N=${{ 'Aj0ELeypFsembv1AqCfcGoZib1TNt53UmbeYSBTUOXi' }}" >> .env
         echo "LINE_TOKEN_GM=${{ 'SDayipcaDmusBGQLTm9xepD0VVU14vyNLjGnGrmFLW5' }}" >> .env
 
-    - name: Notify_P.py
+    - name: Notify
       run: |
         python Notify_F.py &
         python Notify_N.py &
