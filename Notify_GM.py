@@ -3,7 +3,6 @@ import time
 import requests
 import datetime
 import setting
-import schedule
 
 
 Target_URL = 'https://covid19.codeforaomori.org/'
@@ -19,7 +18,7 @@ message = f'{now}の青森県の新規感染者数は\n{number}人\n({date})'
 
 TOKEN_GM = setting.AP_GM
 
-def main():
+def mainGM():
     send_line_notify_GM(
       message
     )
@@ -35,10 +34,5 @@ def send_line_notify_GM(notification_message):
     requests.post(line_notify_api, headers = headers, data = data)
 
 if __name__ == "__main__":
-    main()
-
-schedule.every().day.at("08:00").do(main, send_line_notify_GM)
-
-while True:
-    schedule.run_pending()
+    mainGM()
     time.sleep(3)

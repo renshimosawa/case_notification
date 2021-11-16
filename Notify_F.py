@@ -3,7 +3,7 @@ import time
 import requests
 import datetime
 import setting
-import schedule
+
 
 
 Target_URL = 'https://covid19.codeforaomori.org/'
@@ -19,7 +19,7 @@ message = f'{now}の青森県の新規感染者数は\n{number}人\n({date})'
 
 TOKEN_F = setting.AP_F
 
-def main():
+def mainF():
     send_line_notify_F(
       message
     )
@@ -36,10 +36,5 @@ def send_line_notify_F(notification_message):
 
 
 if __name__ == "__main__":
-    main()
-
-schedule.every().day.at("08:00").do(main, send_line_notify_F)
-
-while True:
-    schedule.run_pending()
+    mainF()
     time.sleep(3)
