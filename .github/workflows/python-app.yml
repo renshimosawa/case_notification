@@ -29,10 +29,10 @@ jobs:
     - name: Create dot env file
       run: |
         touch .env
-        echo "LINE_TOKEN_F=${{ 'kTwWrZxlnLrXfO4txAkNTHXAwFYhjMoXcDsTPLwS8ZK' }}" >> .env
-        echo "LINE_TOKEN_Y=${{ 'puZMRpQJxUUw97UxwNTe0A1AWkzJDCjNDsvVPxMPvBw' }}" >> .env
-        echo "LINE_TOKEN_N=${{ 'Aj0ELeypFsembv1AqCfcGoZib1TNt53UmbeYSBTUOXi' }}" >> .env
-        echo "LINE_TOKEN_GM=${{ 'SDayipcaDmusBGQLTm9xepD0VVU14vyNLjGnGrmFLW5' }}" >> .env
+        echo "LINE_TOKEN_F=${{ secret.LINE_TOKEN_F }}" >> .env
+        echo "LINE_TOKEN_Y=${{ secret.LINE_TOKEN_Y }}" >> .env
+        echo "LINE_TOKEN_N=${{ secret.LINE_TOKEN_N }}" >> .env
+        echo "LINE_TOKEN_GM=${{ secret.LINE_TOKEN_GM }}" >> .env
 
     - name: Notify_F.py
       run: |
