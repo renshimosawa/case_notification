@@ -23,6 +23,7 @@ jobs:
         pip install bs4
         pip install requests
         pip install datetime
+        pip install schedule
         pip install python-dotenv
 
     - name: Create dot env file
@@ -33,9 +34,6 @@ jobs:
         echo "LINE_TOKEN_N=${{ 'Aj0ELeypFsembv1AqCfcGoZib1TNt53UmbeYSBTUOXi' }}" >> .env
         echo "LINE_TOKEN_GM=${{ 'SDayipcaDmusBGQLTm9xepD0VVU14vyNLjGnGrmFLW5' }}" >> .env
 
-    - name: Notify
+    - name: Notify_F.py
       run: |
-        python Notify_F.py &
-        python Notify_N.py &
-        python Notify_Y.py &
-        python Notify_GM.py &
+        python Notify.py
