@@ -3,20 +3,13 @@ import schedule
 import setting
 import scraping
 import requests
-import os
-from os.path import join, dirname
-from dotenv import load_dotenv
-
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
-
-TOKEN_F = os.environ.get("LINE_TOKEN_F")
-TOKEN_GM = os.environ.get("LINE_TOKEN_GM")
-TOKEN_N = os.environ.get("LINE_TOKEN_N")
-TOKEN_Y = os.environ.get("LINE_TOKEN_Y")
 
 message=scraping.message
 
+TOKEN_F = setting.AP_F
+TOKEN_GM = setting.AP_GM
+TOKEN_N = setting.AP_N
+TOKEN_Y = setting.AP_Y
 
 def main():
     send_line_notify_F(
