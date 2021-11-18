@@ -2,7 +2,6 @@ import schedule
 import setting
 import scraping
 import requests
-import time
 
 message=scraping.message
 
@@ -77,4 +76,5 @@ if __name__ == "__main__":
     mainN()
     mainY()
 
-    time.sleep(5)
+while True:
+    schedule.run_pending(5)
