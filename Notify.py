@@ -4,10 +4,10 @@ import scraping
 import requests
 import os
 
-TOKEN_F = os.environ.get("LINE_TOKEN_F")
-TOKEN_GM = os.environ.get("LINE_TOKEN_GM")
-TOKEN_N = os.environ.get("LINE_TOKEN_N")
-TOKEN_Y = os.environ.get("LINE_TOKEN_Y")
+TOKEN_F = os.environ.get("LINE_TOKEN_F ")
+TOKEN_GM = os.environ.get("LINE_TOKEN_GM ")
+TOKEN_N = os.environ.get("LINE_TOKEN_N ")
+TOKEN_Y = os.environ.get("LINE_TOKEN_Y ")
 
 message=scraping.message
 
