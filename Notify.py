@@ -3,11 +3,10 @@ import schedule
 import setting
 import scraping
 import requests
-import os
 
 message=scraping.message
 
-TOKEN_F = os.environ.get("LINE_TOKEN_F")
+TOKEN_F = setting.AP_F
 TOKEN_GM = setting.AP_GM
 TOKEN_N = setting.AP_N
 TOKEN_Y = setting.AP_Y
