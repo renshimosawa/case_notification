@@ -37,5 +37,10 @@ jobs:
         echo "LINE_TOKEN_GM=${{ secrets.LINE_TOKEN_GM }}" >> .env
 
     - name: Notify.py
+      env:
+        LINE_TOKEN_F=${{ secrets.LINE_TOKEN_F }}
+        LINE_TOKEN_Y=${{ secrets.LINE_TOKEN_Y }}
+        LINE_TOKEN_N=${{ secrets.LINE_TOKEN_N }}
+        LINE_TOKEN_GM=${{ secrets.LINE_TOKEN_GM }}
       run: |
         python Notify.py
