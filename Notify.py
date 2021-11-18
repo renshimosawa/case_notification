@@ -10,25 +10,20 @@ TOKEN_GM = setting.AP_GM
 TOKEN_N = setting.AP_N
 TOKEN_Y = setting.AP_Y
 
-def mainF():
+def main():
     send_line_notify_F(
       message
     )
-
-def mainGM():
     send_line_notify_GM(
       message
     )
-
-def mainN():
     send_line_notify_N(
       message
     )
-
-def mainY():
     send_line_notify_Y(
       message
     )
+
 
 def send_line_notify_F(notification_message):
     """
@@ -71,10 +66,4 @@ def send_line_notify_Y(notification_message):
     requests.post(line_notify_api, headers = headers, data = data)
 
 if __name__ == "__main__":
-    mainF()
-    mainGM()
-    mainN()
-    mainY()
-
-while True:
-    schedule.run_pending(5)
+    main()
