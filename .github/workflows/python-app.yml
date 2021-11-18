@@ -31,13 +31,16 @@ jobs:
     - name: Create dot env file
       run: |
         touch .env
-        echo LINE_TOKEN_F =${{ secrets.LINE_TOKEN_F }} >> .env
-        echo LINE_TOKEN_Y =${{ secrets.LINE_TOKEN_Y }} >> .env
-        echo LINE_TOKEN_N =${{ secrets.LINE_TOKEN_N }} >> .env
-        echo LINE_TOKEN_GM =${{ secrets.LINE_TOKEN_GM }} >> .env
+        echo LINE_TOKEN_F =${{ "secrets.LINE_TOKEN_F" }} >> .env
+        echo LINE_TOKEN_Y =${{ "secrets.LINE_TOKEN_Y" }} >> .env
+        echo LINE_TOKEN_N =${{ "secrets.LINE_TOKEN_N" }} >> .env
+        echo LINE_TOKEN_GM =${{ "secrets.LINE_TOKEN_GM" }} >> .env
         
     - name: Notify.py
+      env:
+        LINE_TOKEN_F: ${{ secrets.LINE_TOKEN_F }}
+        LINE_TOKEN_Y: ${{ secrets.LINE_TOKEN_Y }}
+        LINE_TOKEN_N: ${{ secrets.LINE_TOKEN_N }}
+        LINE_TOKEN_GM: ${{ secrets.LINE_TOKEN_GM }}
       run: |
-        python scraping.py &
-        python setting.py &
         python Notify.py 
