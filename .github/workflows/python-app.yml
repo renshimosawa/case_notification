@@ -1,8 +1,6 @@
 name: Case Notification
 
 on:
-  push:
-      branches: [ main ]
   schedule:
     - cron: '0 9 * * *'
 
@@ -31,10 +29,10 @@ jobs:
     - name: Create dot env file
       run: |
         touch .env
-        echo LINE_TOKEN_F =${{ secrets.LINE_TOKEN_F }} >> .env
-        echo LINE_TOKEN_Y =${{ secrets.LINE_TOKEN_Y }} >> .env
-        echo LINE_TOKEN_N =${{ secrets.LINE_TOKEN_N }} >> .env
-        echo LINE_TOKEN_GM =${{ secrets.LINE_TOKEN_GM }} >> .env
+        echo LINE_TOKEN_F=${{ secrets.LINE_TOKEN_F }} >> .env
+        echo LINE_TOKEN_Y=${{ secrets.LINE_TOKEN_Y }} >> .env
+        echo LINE_TOKEN_N=${{ secrets.LINE_TOKEN_N }} >> .env
+        echo LINE_TOKEN_GM=${{ secrets.LINE_TOKEN_GM }} >> .env
         
     - name: Notify.py
       env:
