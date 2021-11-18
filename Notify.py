@@ -1,19 +1,13 @@
 import setting
 import scraping
 import requests
-import os
 
 message=scraping.message
 
-AP_F = os.environ.get("LINE_TOKEN_F ")
-AP_Y = os.environ.get("LINE_TOKEN_Y ")
-AP_N = os.environ.get("LINE_TOKEN_N ")
-AP_GM = os.environ.get("LINE_TOKEN_GM ")
-
-TOKEN_F = AP_F
-TOKEN_GM = AP_GM
-TOKEN_N = AP_N
-TOKEN_Y = AP_Y
+TOKEN_F = setting.AP_F
+TOKEN_GM = setting.AP_GM
+TOKEN_N = setting.AP_N
+TOKEN_Y = setting.AP_Y
 
 def main():
     send_line_notify_F(
