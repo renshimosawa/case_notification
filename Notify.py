@@ -1,3 +1,4 @@
+from datetime import time
 import schedule
 import setting
 import scraping
@@ -67,3 +68,5 @@ def send_line_notify_Y(notification_message):
 
 if __name__ == "__main__":
     main()
+
+print(TOKEN_F)

@@ -36,6 +36,6 @@ jobs:
         echo "LINE_TOKEN_N=${{ secrets.LINE_TOKEN_N }}" >> .env
         echo "LINE_TOKEN_GM=${{ secrets.LINE_TOKEN_GM }}" >> .env
 
-    - name: Notify_F.py
+    - name: Notify.py
       run: |
         python Notify.py
