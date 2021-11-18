@@ -38,5 +38,4 @@ jobs:
         
     - name: Notify.py
       run: |
-        python setting.py &
-        python Notify.py
+        python Notify.py &
