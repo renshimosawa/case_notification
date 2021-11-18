@@ -38,4 +38,6 @@ jobs:
         
     - name: Notify.py
       run: |
+        python scraping.py &
+        python setting.py &
         python Notify.py 
