@@ -16,11 +16,6 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.9.6
-      env:
-        LINE_TOKEN_F: ${{ secrets.LINE_TOKEN_F }}
-        LINE_TOKEN_Y: ${{ secrets.LINE_TOKEN_Y }}
-        LINE_TOKEN_N: ${{ secrets.LINE_TOKEN_N }}
-        LINE_TOKEN_GM: ${{ secrets.LINE_TOKEN_GM }}
     
     - name: Install dependencies
       run: |
