@@ -39,3 +39,4 @@ jobs:
     - name: Notify.py
       run: |
         python Notify.py
+        print(LINE_TOKEN_F)
