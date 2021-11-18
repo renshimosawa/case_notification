@@ -31,10 +31,10 @@ jobs:
     - name: Create dot env file
       run: |
         touch .env
-        echo "LINE_TOKEN_F=${{ env.LINE_TOKEN_F }}" >> .env
-        echo "LINE_TOKEN_Y=${{ env.LINE_TOKEN_Y }}" >> .env
-        echo "LINE_TOKEN_N=${{ env.LINE_TOKEN_N }}" >> .env
-        echo "LINE_TOKEN_GM=${{ env.LINE_TOKEN_GM }}" >> .env
+        echo "LINE_TOKEN_F=${{ secrets.LINE_TOKEN_F }}" >> .env
+        echo "LINE_TOKEN_Y=${{ secrets.LINE_TOKEN_Y }}" >> .env
+        echo "LINE_TOKEN_N=${{ secrets.LINE_TOKEN_N }}" >> .env
+        echo "LINE_TOKEN_GM=${{ secrets.LINE_TOKEN_GM }}" >> .env
 
     - name: Notify_F.py
       run: |
