@@ -64,5 +64,6 @@ def send_line_notify_Y(notification_message):
     data = {'message': f'\n{notification_message}'}
     requests.post(line_notify_api, headers = headers, data = data)
 
+
 if __name__ == "__main__":
     main()
