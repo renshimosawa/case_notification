@@ -3,6 +3,7 @@ name: Case Notification
 on:
    push:
       branches: [ main ]
+      
   schedule:
     - cron: "55 8 * * *"
 
