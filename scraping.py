@@ -13,5 +13,5 @@ number = entries[0].find(class_="DataView-DataInfo-summary").text.replace('人',
 date = entries[0].find(class_="DataView-DataInfo-date").text.replace('実績値','')
 latest = entries[0].find(class_="Permalink").text.replace(' ','').replace('\n', '')
 
-message = f'{now}の青森県の新規感染者数は\n{number}人{date}\n{latest}\n詳細:https://stopcovid19.pref.aomori.lg.jp/'
+message = f'{now}の青森県の新規感染者数は\n{number}人\n{latest}\n詳細:https://stopcovid19.pref.aomori.lg.jp/'
 print(message)
