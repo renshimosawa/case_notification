@@ -18,5 +18,5 @@ for text in tdlist:
    if "感染症患者" in text:
        case = text.replace('新型コロナウイルス感染症患者（', '').replace('例）を確認', '')
 
-message = f'{date}公表\n青森県新規感染者数　{case}人\n詳細:https://www.pref.aomori.lg.jp/soshiki/kenko/hoken/covid19-press.html'
+message = f'{date}公表\n青森県新規感染者数　{case}人'
 print(message)
